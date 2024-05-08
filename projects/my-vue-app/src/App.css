@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh;
+}
+.country-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.country-card {
+  background-color: #0056b3;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 12px; 
+  margin: 12px; 
+  text-align: center;
+}
+
+.country-card h2 {
+  font-size: 16px; 
+  margin-bottom: 6px; 
+}
+
+.country-card p {
+  font-size: 12px; 
+  margin: 2px 0; 
+}
+
+.country-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-top: 6px; 
+}
+
+input[type="text"] {
+  padding: 6px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 6px; 
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px; 
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+img {
+  width: 100px; 
+  height: auto; 
+}
+.page-container {
+  position: relative;
+}
+.fixed-buttons {
+  position: fixed;
+  top: 0px;
+  right: 20px;
+  z-index: 1000;
+}
+.fixed-buttons2 {
+  position: fixed;
+  top: 00px;
+  left:600px;
+  z-index: 1000;
+}

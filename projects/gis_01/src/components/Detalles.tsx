@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
+// Definición de las propiedades que acepta el componente
 interface FeatureProperties {
   name: string;
   iso_a2: string;
@@ -12,12 +13,16 @@ interface FeatureProperties {
 }
 
 const DetallesComponent: React.FC<FeatureProperties> = ({ name, iso_a2, coordinates }) => {
+  
+  // Estado para controlar la visibilidad del componente
   const [isVisible, setIsVisible] = useState(true);
 
+  // Función para manejar el cierre del componente
   const handleClose = () => {
     setIsVisible(false);
   };
 
+  // Si no es visible, no renderiza nada
   if (!isVisible) {
     return null;
   }
@@ -25,6 +30,7 @@ const DetallesComponent: React.FC<FeatureProperties> = ({ name, iso_a2, coordina
   return (
     <div className="detalles-container">
       <Card className="detalles-card">
+        {/* Botón para cerrar el componente */}
         <IconButton
           sx={{ position: 'absolute', right: 8, top: 8 }}
           onClick={handleClose}

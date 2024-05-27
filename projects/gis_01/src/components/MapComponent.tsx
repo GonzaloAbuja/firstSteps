@@ -105,10 +105,24 @@ const MapComponent: React.FC<MapComponentProps> = ({ showDetails, layers, setLay
       visible: layers.find(layer => layer.id === '5')?.visible,
     });
 
+    // Capa WMS desde GeoServer
+    const geoLayer = new TileLayer({
+      source: new TileWMS({
+        url: 'http://localhost:8085/geoserver/ne/wms?service=WMS&version=1.1.0&request=GetMap&layers=ne%3Abarrios&bbox=227071.8572857892%2C3901876.695336829%2C772928.1427142108%2C8942165.537905218&width=330&height=768&srs=EPSG%3A25830&styles=&format=image%2Fpng', 
+        params: {
+          'LAYERS': 'ne:barrios', 
+          'CRS': 'EPSG:25830', 
+        },
+        serverType: 'geoserver',
+        transition: 0,
+      }),
+      visible: layers.find(layer => layer.id === '6')?.visible,
+    });
+
     // Creación del mapa
     const map = new Map({
       target: 'map',
-      layers: [tileLayer, ...vectorLayers, wmsLayer, wmtsLayer, featureLayer],
+      layers: [tileLayer, ...vectorLayers, wmsLayer, wmtsLayer, featureLayer, geoLayer],
       view: new View({ center: [0, 0], zoom: 2 }),
     });
 

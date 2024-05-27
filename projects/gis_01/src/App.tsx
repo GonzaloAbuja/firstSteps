@@ -20,6 +20,7 @@ const App: React.FC = () => {
     { id: '3', title: 'Francia', visible: false },
     { id: '4', title: 'Madrid', visible: false },
     { id: '5', title: 'Espana', visible: false },
+    { id: '6', title: 'Barrios', visible: false }
   ]);
   const [showDetails, setShowDetails] = useState(true);
 
